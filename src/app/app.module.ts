@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -7,6 +7,10 @@ import { coreComponents } from './common-component';
 import { rootPages } from './pages';
 import { AppSharedModule } from './shared/shared.module';
 
+
+export function loadUserInfo() {
+  console.log('APP_INITIALIZER','will be logged before page initiallization');
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +22,14 @@ import { AppSharedModule } from './shared/shared.module';
     AppRoutingModule,
     AppSharedModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: APP_INITIALIZER,//app initialize hone se pehle call krega
+      useFactory: loadUserInfo,//this is the function jo call krega
+      multi: true,
+      deps: []//dependency yha dalo
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'folder-structure';
+
+  constructor(){
+    console.log('AppComponent','will be logged after page initiallization');
+  }
 }
