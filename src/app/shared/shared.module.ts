@@ -31,6 +31,7 @@ import { SidebarModule } from 'primeng/sidebar';
 import { TriStateCheckboxModule } from 'primeng/tristatecheckbox';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { ErrorMessageComponent } from './component/error-message/error-message.component';
+import { NotificationPipePipe } from './pipe/notification-pipe.pipe';
 
 const IMP_EXP = [
   OverlayPanelModule,
@@ -70,9 +71,9 @@ const IMP_EXP = [
 ];
 
 @NgModule({
-  declarations: [ErrorMessageComponent], //component, directive pipe
+  declarations: [ErrorMessageComponent, NotificationPipePipe], //component, directive pipe
   imports: [...IMP_EXP], //module required
-  exports: [...IMP_EXP,ErrorMessageComponent], //module required + some directive ,pipe and component that will be used in every module
+  exports: [...IMP_EXP, ErrorMessageComponent], //module required + some directive ,pipe and component that will be used in every module
   providers: [], //service
 })
 export class AppSharedModule {}
