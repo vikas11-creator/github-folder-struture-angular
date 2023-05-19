@@ -22,3 +22,7 @@ import { AppSharedModule } from '../shared/shared.module';
   ],
 })
 export class PurchaseModule {}
+//LET HUME PRODUCT MODULE KA PRODUCT1COMPONENT KISI DUSRE MODULE LET PURCHASE ME USE KRNA HAI
+// TO ProductModule COPY KRKE PURCHASE MODULE KE IMPORT ME DAL DO
+//BUT YHA SE EXPORT BHI KRNA PADEGA ==>> exports:[Product1Component],
+//AB PURCHASE ME <app-product1></app-product1> YEH SELECTOR USE KR SKTE HO
