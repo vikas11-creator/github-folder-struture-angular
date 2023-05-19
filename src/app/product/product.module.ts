@@ -20,7 +20,8 @@ import { AppSharedModule } from '../shared/shared.module';
     CommonModule,
     ProductRoutingModule,
     AppSharedModule//shared module imported 
-  ]
+  ],
+  exports:[Product1Component]
 })
 export class ProductModule { }
 //LET HUME PRODUCT MODULE KA PRODUCT1COMPONENT KISI DUSRE MODULE LET PURCHASE ME USE KRNA HAI

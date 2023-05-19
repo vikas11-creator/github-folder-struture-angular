@@ -7,6 +7,7 @@ import { Purchase1Component } from './purchase1/purchase1.component';
 import { Purchase2Component } from './purchase2/purchase2.component';
 import { Purchase3Component } from './purchase3/purchase3.component';
 import { AppSharedModule } from '../shared/shared.module';
+import { ProductModule } from '../product/product.module';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { AppSharedModule } from '../shared/shared.module';
     CommonModule,
     PurchaseRoutingModule,
     AppSharedModule, //shared module imported
+    ProductModule//USE ONE MODULE COMPONENT IN OTHER MODULE
   ],
 })
 export class PurchaseModule {}
