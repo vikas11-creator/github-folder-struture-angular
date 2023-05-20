@@ -73,8 +73,9 @@ const IMP_EXP = [
 @NgModule({
   declarations: [ErrorMessageComponent, NotificationPipePipe], //component, directive pipe
   imports: [...IMP_EXP], //module required
-  exports: [...IMP_EXP, ErrorMessageComponent], //module required + some directive ,pipe and component that will be used in every module
+  exports: [...IMP_EXP, ErrorMessageComponent,NotificationPipePipe], //module required + some directive ,pipe and component that will be used in every module
   providers: [], //service
 })
 export class AppSharedModule {}
 //Import this class AppSharedModule in root module & Other custom module by which we can use its directive ,component and pipe
+//NOTE NOTIFICATION PIPE KO OTHER MODULE ME USE KRNA HAI TO YHA DECLARATION ME TO DALENGE HI BUT EXPORT ME BHI DAL DENGE ,,,AB PIPE YA DIRECTIVE JIS BHI MODULE KE COMPONENT ME USE KRNA H KAR SKTE H HUM
