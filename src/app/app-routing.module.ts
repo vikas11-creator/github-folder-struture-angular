@@ -27,6 +27,10 @@ const routes: Routes = [
     ],
   },
   {
+    path:'parentModule',
+    loadChildren: ()=> import('./parentModule/parent-module').then((m)=> m.ParentModuleModule)
+  },
+  {
     path: '**', redirectTo: 'login'
   }
 
