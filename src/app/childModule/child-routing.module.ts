@@ -5,7 +5,7 @@ import { ChildComponent } from '../childModule/child/child.component';
 const routes: Routes = [
   { path: '', redirectTo: 'child', pathMatch: 'full' },
   {
-    path: 'child',
+    path: 'load-child',
     component: ChildComponent
   },
 ];

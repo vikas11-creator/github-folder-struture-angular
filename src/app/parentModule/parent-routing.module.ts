@@ -5,7 +5,7 @@ import { ParentmoduleComponent } from '../parentModule/parentmodule/parentmodule
 const routes: Routes = [
   { path: '', redirectTo: 'parent', pathMatch: 'full' },
   {
-    path: 'parentComp',
+    path: 'load-parent',
     component: ParentmoduleComponent,
   },
   {
@@ -15,9 +15,9 @@ const routes: Routes = [
   },
 ];
 //ek module banaya lazy loading parent wala usme se agar child me jana h jo ki lazy laoding hoga to uska tarika yeh hai
-//     ...../parentModule/parentComp
+//     ...../parentModule/load-parent
 //path to open parent module component
-//       ...../parentModule/childModule/child
+//       ...../parentModule/childModule/load-child
 //path to open child module component
 @NgModule({
   imports: [RouterModule.forChild(routes)],
