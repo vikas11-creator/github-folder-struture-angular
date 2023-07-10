@@ -27,7 +27,7 @@ const routes: Routes = [
     ],
   },
   {
-    path:'parentModule',
+    path:'module-in-module',
     loadChildren: ()=> import('./parentModule/parent-module').then((m)=> m.ParentModuleModule)
   },
   {
