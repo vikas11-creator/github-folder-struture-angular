@@ -6,16 +6,21 @@ const routes: Routes = [
   { path: '', redirectTo: 'parent', pathMatch: 'full' },
   {
     path: 'parentComp',
-    component: ParentmoduleComponent
+    component: ParentmoduleComponent,
   },
   {
-    path:'childModule',
-    loadChildren: ()=> import('../childModule/child-module').then((m)=> m.childModule)
+    path: 'childModule',
+    loadChildren: () =>
+      import('../childModule/child-module').then((m) => m.childModule),
   },
 ];
-
+//ek module banaya lazy loading parent wala usme se agar child me jana h jo ki lazy laoding hoga to uska tarika yeh hai
+//     ...../parentModule/parentComp
+//path to open parent module component
+//       ...../parentModule/childModule/child
+//path to open child module component
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class ParentRoutingModule { }
+export class ParentRoutingModule {}
