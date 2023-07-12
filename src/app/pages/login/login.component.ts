@@ -22,12 +22,12 @@ export class LoginComponent extends BaseClass implements OnInit {
     'username': [
       { type: 'required', message: 'Please enter username' },
       { type: 'maxlength', message: 'username must be between 2 to 50 characters' },
-      { type: 'pattern', message: 'username must be between 2 to 50 characters' },
+      { type: 'minlength', message: 'username must be between 2 to 50 characters' },
 
     ],
     'password': [
       { type: 'required', message: 'Please enter password' },
-      { type: 'minlength', message: 'password must be between 2 to 50 characters' }
+      { type: 'minlength', message: 'password must be between 5 to 50 characters' }
     ]
   };
   constructor(private fb: FormBuilder,
@@ -42,7 +42,7 @@ export class LoginComponent extends BaseClass implements OnInit {
 
   initializeLoginForm() {
     this.loginForm = this.fb.group({
-      username: ['', Validators.compose([Validators.required, Validators.maxLength(51)])],
+      username: ['', Validators.compose([Validators.required,Validators.minLength(2), Validators.maxLength(51)])],
       password: ['', Validators.compose([Validators.required, Validators.minLength(5)])]
     });
   }
