@@ -22,7 +22,7 @@ export class LoginComponent extends BaseClass implements OnInit {
   formSubmitAttempt: boolean = false;
   iconShow: boolean = false;
   isBadCredential: boolean = false;
-  public loginForm: FormGroup;
+  loginForm: FormGroup;
 
   public validation_messages = {
     'username': [
