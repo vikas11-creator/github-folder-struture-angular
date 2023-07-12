@@ -19,14 +19,14 @@ export class ForgotPasswordComponent extends BaseClass implements OnInit {
 
   public validation_messages = {
     'oldPassword': [
-      { type: 'required', message: 'Please enter username' },
-      { type: 'maxlength', message: 'username must be between 2 to 50 characters' },
-      { type: 'minlength', message: 'username must be between 2 to 50 characters' },
+      { type: 'required', message: 'Please enter oldPassword' },
+      { type: 'maxlength', message: 'oldPassword must be between 2 to 50 characters' },
+      { type: 'minlength', message: 'oldPassword must be between 2 to 50 characters' },
 
     ],
     'newPassword': [
-      { type: 'required', message: 'Please enter password' },
-      { type: 'minlength', message: 'password must be between 5 to 50 characters' }
+      { type: 'required', message: 'Please enter newPassword' },
+      { type: 'minlength', message: 'newPassword must be between 5 to 50 characters' }
     ]
   };
   constructor(private fb: FormBuilder, 
