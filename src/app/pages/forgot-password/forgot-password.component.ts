@@ -18,13 +18,13 @@ export class ForgotPasswordComponent extends BaseClass implements OnInit {
   loginForm: FormGroup;
 
   public validation_messages = {
-    'username': [
+    'oldPassword': [
       { type: 'required', message: 'Please enter username' },
       { type: 'maxlength', message: 'username must be between 2 to 50 characters' },
       { type: 'minlength', message: 'username must be between 2 to 50 characters' },
 
     ],
-    'password': [
+    'newPassword': [
       { type: 'required', message: 'Please enter password' },
       { type: 'minlength', message: 'password must be between 5 to 50 characters' }
     ]
@@ -41,8 +41,8 @@ export class ForgotPasswordComponent extends BaseClass implements OnInit {
 
   initializeLoginForm() {
     this.loginForm = this.fb.group({
-      username: ['', Validators.compose([Validators.required,Validators.minLength(2), Validators.maxLength(51)])],
-      password: ['', Validators.compose([Validators.required, Validators.minLength(5)])]
+      oldPassword: ['', Validators.compose([Validators.required,Validators.minLength(2), Validators.maxLength(51)])],
+      newPassword: ['', Validators.compose([Validators.required, Validators.minLength(5)])]
     });
   }
 
