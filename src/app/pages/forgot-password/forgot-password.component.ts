@@ -29,7 +29,7 @@ export class ForgotPasswordComponent extends BaseClass implements OnInit {
       { type: 'minlength', message: 'password must be between 5 to 50 characters' }
     ]
   };
-  constructor(private fb: FormBuilder,
+  constructor(private fb: FormBuilder, 
     public override injector: Injector,) {
     super(injector);
     this.strMsg = '';
