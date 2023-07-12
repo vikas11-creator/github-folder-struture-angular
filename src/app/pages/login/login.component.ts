@@ -1,12 +1,6 @@
 import { BaseClass } from './../../shared/common/baseClass';
 import { Component, OnInit, Injector } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { NgxSpinnerService } from 'ngx-spinner';
-import { PATH } from 'src/app/app.constant';
-import { AuthService } from 'src/app/shared/services/auth.service';
-import { VALIDATION_PATTERNS } from 'src/app/shared/common/validation-patterns';
-import { sharedService } from 'src/app/shared/services/shared.service';
 
 @Component({
   selector: 'app-login',
@@ -37,7 +31,6 @@ export class LoginComponent extends BaseClass implements OnInit {
     ]
   };
   constructor(private fb: FormBuilder,
-    private spinnerService: NgxSpinnerService,
     public override injector: Injector,) {
     super(injector);
     this.strMsg = '';
@@ -49,7 +42,7 @@ export class LoginComponent extends BaseClass implements OnInit {
 
   initializeLoginForm() {
     this.loginForm = this.fb.group({
-      username: ['', Validators.compose([Validators.required, Validators.maxLength(51), Validators.pattern(VALIDATION_PATTERNS.CONSECUTIVE_SPACES)])],
+      username: ['', Validators.compose([Validators.required, Validators.maxLength(51)])],
       password: ['', Validators.compose([Validators.required, Validators.minLength(5)])]
     });
   }
