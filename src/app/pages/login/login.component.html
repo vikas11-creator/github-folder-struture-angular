@@ -4,7 +4,6 @@
       <div class="log-input">
           <div class="form-group">
               <div class="login-input">
-                  <div class="user-icon"><fa-icon [icon]="faUser"></fa-icon></div>
                   <input type="text" class="form-control" id="username" placeholder="Username"
                       formControlName="username" name="username"
                       pInputText required>
@@ -15,21 +14,14 @@
           </div>
           <div class="form-group">
               <div class="login-input">
-                  <div class="type-icon" id="eyeViewBtn" (click)="toggleTypeIcon()" *ngIf="iconShow"><fa-icon [icon]="getIcon(isPassword)"></fa-icon></div>
                   <div class="password-icon"><fa-icon [icon]="faLock"></fa-icon></div>
-                  <input [type]="password" id="password" class="form-control fc-icon"  (keyup)="rePassword($event)"
+                  <input [type]="password" id="password" class="form-control fc-icon"
                       placeholder="Password" formControlName="password" name="password"
                       pInputText>
               </div>
               <div class="fieldError" *ngIf="loginForm.get('password').invalid && loginForm.get('password').touched">
                   {{ getErrorMessage(loginForm, validation_messages, 'password') | translate }}
               </div>
-          </div>
-      </div>
-      <div>
-          <div class="col text-end" style="display: none;">
-              <a class="forgot-pass" [routerLink]="['/forgot-password']"
-                  id="forgotPass">Forgot Password?</a>
           </div>
       </div>
       <div class="login-button">
