@@ -22,18 +22,39 @@ export class LoginComponent extends BaseClass implements OnInit {
   formSubmitAttempt: boolean = false;
   iconShow: boolean = false;
   isBadCredential: boolean = false;
-  
+  public loginForm: FormGroup;
+
+  public validation_messages = {
+    'username': [
+      { type: 'required', message: 'LOGIN.ERRORS.USERNAME.REQUIRED' },
+      { type: 'maxlength', message: 'LOGIN.ERRORS.USERNAME.MAX_LENGTH' },
+      { type: 'pattern', message: 'User name is not valid' },
+
+    ],
+    'password': [
+      { type: 'required', message: 'LOGIN.ERRORS.PASSWORD.REQUIRED' },
+      { type: 'minlength', message: 'LOGIN.ERRORS.PASSWORD.MIN_LENGTH' }
+    ]
+  };
   constructor(private fb: FormBuilder,
-    private router: Router,
     private spinnerService: NgxSpinnerService,
-    private authService: AuthService,
-    public override injector: Injector,
-    private sharedService: sharedService) {
+    public override injector: Injector,) {
     super(injector);
     this.strMsg = '';
   }
 
   ngOnInit(): void {
-   
+   this.initializeLoginForm();
+  }
+
+  initializeLoginForm() {
+    this.loginForm = this.fb.group({
+      username: ['', Validators.compose([Validators.required, Validators.maxLength(51), Validators.pattern(VALIDATION_PATTERNS.CONSECUTIVE_SPACES)])],
+      password: ['', Validators.compose([Validators.required, Validators.minLength(5)])]
+    });
+  }
+
+  login(loginForm: FormGroup) {
+    this.formSubmitAttempt = true;
   }
 }
