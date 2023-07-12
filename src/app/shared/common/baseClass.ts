@@ -43,7 +43,7 @@ export class BaseClass {
     let message = '';
     // tslint:disable-next-line:prefer-for-of
     for (let i = 0; i < formControl.controls.length; i++) {
-      message = this.getErrorMessage( formControl.controls[i]:FormGroup, validation_messages:any, validation_item:any)
+      message = this.getErrorMessage( formControl.controls[i]:FormGroup, validation_messages, validation_item)
       if (message !== '') {
         break;
       }
