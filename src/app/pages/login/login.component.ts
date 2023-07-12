@@ -20,14 +20,14 @@ export class LoginComponent extends BaseClass implements OnInit {
 
   public validation_messages = {
     'username': [
-      { type: 'required', message: 'LOGIN.ERRORS.USERNAME.REQUIRED' },
-      { type: 'maxlength', message: 'LOGIN.ERRORS.USERNAME.MAX_LENGTH' },
-      { type: 'pattern', message: 'User name is not valid' },
+      { type: 'required', message: 'Please enter username' },
+      { type: 'maxlength', message: 'username must be between 2 to 50 characters' },
+      { type: 'pattern', message: 'username must be between 2 to 50 characters' },
 
     ],
     'password': [
-      { type: 'required', message: 'LOGIN.ERRORS.PASSWORD.REQUIRED' },
-      { type: 'minlength', message: 'LOGIN.ERRORS.PASSWORD.MIN_LENGTH' }
+      { type: 'required', message: 'Please enter password' },
+      { type: 'minlength', message: 'password must be between 2 to 50 characters' }
     ]
   };
   constructor(private fb: FormBuilder,
