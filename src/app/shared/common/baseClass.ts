@@ -14,7 +14,7 @@ export class BaseClass {
 
   // to validate either formArray, formControl, FormGroup.
   // tslint:disable-next-line:variable-name
-  getErrorMessage(formGroup, validation_messages, validation_item): string {
+  getErrorMessage(formGroup:FormGroup, validation_messages:any, validation_item:any): string {
     let message = '';
     const keys = Object.keys(formGroup.controls);
     const index = keys.indexOf(validation_item);
@@ -39,11 +39,11 @@ export class BaseClass {
   }
   // to validate form array
   // tslint:disable-next-line:variable-name
-  private validateFormArray(formControl: FormArray, validation_messages, validation_item) {
+  private validateFormArray(formControl: FormArray, validation_messages:any, validation_item:any) {
     let message = '';
     // tslint:disable-next-line:prefer-for-of
     for (let i = 0; i < formControl.controls.length; i++) {
-      message = this.getErrorMessage(formControl.controls[i], validation_messages, validation_item);
+      message = this.getErrorMessage(formControl.controls[i] :FormGroup, validation_messages:any, validation_item:any);
       if (message !== '') {
         break;
       }
